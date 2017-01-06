@@ -13,7 +13,10 @@ namespace Windows
         {
             this.Load += (sender, args) =>
             {
+                //MessageBox.Show("Как у Вас делишки?");
+
                 
+
             };
         }
     }
