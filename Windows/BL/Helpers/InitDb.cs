@@ -1,33 +1,43 @@
-﻿using DB.Model;
+﻿using BL.TaskManagerModule.Infrastructure;
+using BL.TaskManagerModule;
 using DB.Repository;
 
 namespace BL.Helpers
 {
     public class InitDb
     {
-        IBl _bl;
+        ITaskManager _bl;
 
         public InitDb()
         {
-            this._bl = new Bl(new UnitOfWork());
-            this._bl.Add(null, "Первая задача");
-            //this.FillingList();
+            var unitOfWork = new UnitOfWork();
+            var repository = unitOfWork.Tasks;
+
+            this._bl = new TaskManager();
+            
+            FillingList(unitOfWork, 3, 3);
+
+            repository.Delete(repository.Find(1));
+            unitOfWork.Save();
+
             this._bl.Dispose();
         }
 
-        //private void FillingList(params int[] branch)
-        //{
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        this._bl.Add((long?)null, "Задача - " + i.ToString());
+        private void FillingList(UnitOfWork unitOfWork, params int[] branch)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                var taskId = this._bl.Add((long?)null, InsertEnum.Inside, "Задача - " + i.ToString());
+                //unitOfWork.Save();
 
-        //        for (int k = 0; k < 3; k++)
-        //        {
-        //            this._bl.Add(, "Задача - " + i.ToString() + " _ " + k.ToString());
-        //        }
+                for (int k = 0; k < 3; k++)
+                {
+                    this._bl.Add(taskId, InsertEnum.Inside, "Задача - " + i.ToString() + " _ " + k.ToString());
+                    //unitOfWork.Save();
+                }
 
-        //    }
-        //}
+            }
+        }
 
     }
 }

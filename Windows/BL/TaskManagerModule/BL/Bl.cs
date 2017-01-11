@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BL.TaskManagerModule;
+using BL.TaskManagerModule.Infrastructure;
 using DB.Model;
 using DB.Repository;
 
-namespace BL
+namespace BL.TaskManagerModule.BL
 {
-    class Bl : IBl
+    partial class Bl : ITaskManager
     {
         private UnitOfWork _unitOfWork;
         private RepositoryBase<TaskModel> _repository;
@@ -30,23 +28,13 @@ namespace BL
             this._unitOfWork.Dispose();
         }
 
-        #region Реализация интерфейса
+#region Реализация интерфейса
         public void Delete(long id)
         {
             
         }
 
-        public void Add(long? parent, string name)
-        {
-            var newTask = new TaskModel()
-            {
-                ParentRefId = parent,
-                Name = name
-            };
 
-            this._repository.Add(newTask);
-            this._unitOfWork.Save();
-        }
 
         public void Rename(long id, string newName)
         {
@@ -63,9 +51,15 @@ namespace BL
             throw new NotImplementedException();
         }
 
-        public void Insert(long? parent, int position)
+        public void Insert(long? idActive, InsertEnum insert, TaskModel task)
         {
-            throw new NotImplementedException();
+            if (idActive == null)
+            {
+                task.Parent = null;
+                task.ParentId = null;
+                //task.Previous = null;
+                //task.Next = null;
+            }
         }
 #endregion 
     }

@@ -16,6 +16,16 @@ namespace DB.Repository
             this._dbSet = context.Set<T>();
         }
 
+        public virtual T Find(long id)
+        {
+            return this._dbSet.Find(id);
+        }
+
+        public virtual void Delete(T entity)
+        {
+            this._dbSet.Remove(entity);
+        }
+
         public virtual void Add(T entity)
         {
             this._dbSet.Add(entity);
@@ -23,7 +33,7 @@ namespace DB.Repository
 
         public virtual IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return this._dbSet;
         }
     }
 }

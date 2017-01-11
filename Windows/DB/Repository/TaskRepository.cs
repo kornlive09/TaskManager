@@ -13,5 +13,16 @@ namespace DB.Repository
         public TaskRepository(TaskDbContext context) : base(context)
         {
         }
+
+        private IQueryable<TaskModel> GetChildren(TaskModel task)
+        {
+            return null; //task.Childre
+        } 
+
+        public IQueryable<TaskModel> GetFamily(TaskModel mainParent)
+        {
+            //this._context.Entry()
+            return null;
+        } 
     }
 }
