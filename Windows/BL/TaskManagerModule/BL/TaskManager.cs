@@ -23,6 +23,21 @@ namespace BL.TaskManagerModule.BL
             this._repository = unitOfWork.Tasks;
         }
 
+        private TaskModel GetById(long? id)
+        {
+            if(id == null)
+                return null;
+            return GetById(id.Value);
+        }
+
+        private TaskModel GetById(long id)
+        {
+            TaskModel select = this._repository.Find(id);
+            if (select == null)
+                throw new Exception("Ошибка - TaskModel с таким id отсутствует");
+            return select;
+        }
+
         public void Dispose()
         {
             this._unitOfWork.Dispose();
