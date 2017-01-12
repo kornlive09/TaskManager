@@ -11,6 +11,6 @@ namespace BL.TaskManagerModule
         void Rename(long id, string newName);
         void Copy(long id);
         void Cut(long id);
-        void Insert(long? idSelect, InsertEnum insert, TaskModel task);
+        void Paste(long idPaste, long idSelect, InsertEnum insert);
     }
 }

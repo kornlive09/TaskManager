@@ -13,7 +13,7 @@ namespace BL.Helpers
             var unitOfWork = new UnitOfWork();
             var repository = unitOfWork.Tasks;
 
-            this._bl = new TaskManager();
+            //this._bl = new TaskManager();
             
             FillingList(unitOfWork, 3, 3);
 

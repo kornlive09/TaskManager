@@ -43,17 +43,11 @@
     <Compile Include="Helpers\InitDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskManagerModule\BL\Add.cs" />
-    <Compile Include="TaskManagerModule\BL\Bl.cs" />
+    <Compile Include="TaskManagerModule\BL\Paste.cs" />
+    <Compile Include="TaskManagerModule\BL\TaskManager.cs" />
     <Compile Include="TaskManagerModule\BL\Validation.cs" />
     <Compile Include="TaskManagerModule\Infrastructure\Enums.cs" />
     <Compile Include="TaskManagerModule\ITaskManager.cs" />
-    <Compile Include="TaskManagerModule\Pattern\Commands\AddCommand.cs" />
-    <Compile Include="TaskManagerModule\Pattern\Commands\Command.cs" />
-    <Compile Include="TaskManagerModule\Pattern\ControlsUnits\ControlUnit.cs" />
-    <Compile Include="TaskManagerModule\Pattern\ControlsUnits\IControlUnit.cs" />
-    <Compile Include="TaskManagerModule\Pattern\ControlsUnits\Repository\IRepository.cs" />
-    <Compile Include="TaskManagerModule\Pattern\ControlsUnits\Repository\ListRepository.cs" />
-    <Compile Include="TaskManagerModule\TaskManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DB\DB.csproj">

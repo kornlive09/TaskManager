@@ -5,7 +5,7 @@ using DB.Model;
 
 namespace BL.TaskManagerModule.BL
 {
-    partial class Bl
+    partial class TaskManager
     {
         public long Add(long? selectId, InsertEnum insert, string name)
         {

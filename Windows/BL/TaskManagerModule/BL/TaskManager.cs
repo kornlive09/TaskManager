@@ -6,18 +6,18 @@ using DB.Repository;
 
 namespace BL.TaskManagerModule.BL
 {
-    partial class Bl : ITaskManager
+    partial class TaskManager : ITaskManager
     {
         private UnitOfWork _unitOfWork;
         private RepositoryBase<TaskModel> _repository;
 
-        public Bl()
+        public TaskManager()
         {
             this._unitOfWork = new UnitOfWork();
             this._repository = this._unitOfWork.Tasks;
         }
 
-        public Bl(UnitOfWork unitOfWork)
+        public TaskManager(UnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork;
             this._repository = unitOfWork.Tasks;
@@ -51,16 +51,7 @@ namespace BL.TaskManagerModule.BL
             throw new NotImplementedException();
         }
 
-        public void Insert(long? idActive, InsertEnum insert, TaskModel task)
-        {
-            if (idActive == null)
-            {
-                task.Parent = null;
-                task.ParentId = null;
-                //task.Previous = null;
-                //task.Next = null;
-            }
-        }
+        
 #endregion 
     }
 }

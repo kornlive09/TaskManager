@@ -3,7 +3,7 @@ using DB.Model;
 
 namespace BL.TaskManagerModule.BL
 {
-    partial class Bl
+    partial class TaskManager
     {
         private TaskModel FindOrExeption(long id, string exeption)
         {

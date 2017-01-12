@@ -1,5 +1,4 @@
 ﻿using System;
-using BL.TaskManagerModule;
 using BL.TaskManagerModule.BL;
 using BL.TaskManagerModule.Infrastructure;
 using BL.TaskManagerModule.Pattern.Commands;
@@ -8,7 +7,7 @@ using BL.TaskManagerModule.Pattern.ControlsUnits.Repository;
 using DB.Model;
 using DB.Repository;
 
-namespace BL.TaskManagerModule
+namespace BL.TaskManagerModule.Pattern
 {
     public class TaskManager : ITaskManager
     {
