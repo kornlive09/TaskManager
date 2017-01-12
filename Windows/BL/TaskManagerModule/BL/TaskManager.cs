@@ -61,10 +61,7 @@ namespace BL.TaskManagerModule.BL
             throw new NotImplementedException();
         }
 
-        public void Cut(long id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         
 #endregion 

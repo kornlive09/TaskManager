@@ -43,6 +43,7 @@
     <Compile Include="Helpers\InitDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskManagerModule\BL\Add.cs" />
+    <Compile Include="TaskManagerModule\BL\Cut.cs" />
     <Compile Include="TaskManagerModule\BL\Paste.cs" />
     <Compile Include="TaskManagerModule\BL\TaskManager.cs" />
     <Compile Include="TaskManagerModule\BL\Validation.cs" />
