@@ -11,9 +11,14 @@ namespace BL.TaskManagerModule.BL
 {
     partial class TaskManager
     {
-        public void Insert(long idPaste, long? idSelect, InsertEnum insert)
+        public void Insert(long insertedId, long? selectedId, InsertEnum insert)
         {
-            this.Insert(GetById(idPaste), GetById(idPaste), insert);
+            this.Insert(GetById(insertedId), GetById(selectedId), insert);
+        }
+
+        public void Insert(TaskModel inserted, long? selectedId, InsertEnum insert)
+        {
+            this.Insert(inserted, GetById(selectedId), insert);
         }
 
         private TaskModel GetLastChildren(TaskModel parentTask, long? filterId)
