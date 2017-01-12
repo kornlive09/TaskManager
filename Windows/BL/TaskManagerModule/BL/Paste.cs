@@ -56,7 +56,7 @@ namespace BL.TaskManagerModule.BL
                     throw new Exception("переданно null как выделенный объект. Совместимо только с вставкой inside");
 
             //Заполнение
-            insertedTask.Parent = selectedTask;
+            insertedTask.Parent = selectedTask.Parent;
             //----------
 
             this.InsertLink(selectedTask, insertedTask, insert);
